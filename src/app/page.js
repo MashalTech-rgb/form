@@ -20,12 +20,12 @@ const page = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+  };
     console.log(data)
   }
   return (
     <div>
-      <h1 onSubmit={handleSubmit}>You Submit your data !</h1>
-      <form class="max-w-md mx-auto my-14 border p-4 " >
+      <form class="max-w-md mx-auto my-14 border p-4 " onSubmit={handleSubmit}>
         <div class="relative z-0 w-full mb-5 group">
           <input
             type="email"
