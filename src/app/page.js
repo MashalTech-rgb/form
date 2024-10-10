@@ -3,16 +3,16 @@ import React from "react";
 import { useState } from "react";
 const page = () => {
   const [data, setData] = useState({
-     email: "",
-     password:"",
-     confPassword:"",
-     firstName:"",
-     lastName:"",
-     phone:"",
-     company:"",
-     gender:"",
-     country:"",
-    });
+    email: "",
+    password: "",
+    confPassword: "",
+    firstName: "",
+    lastName: "",
+    phone: "",
+    company: "",
+    gender: "",
+    country: "",
+  });
   const handleData = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
@@ -20,8 +20,8 @@ const page = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-  }
-  console.log(data)
+  };
+  console.log("Complete Data ", data);
   return (
     <div>
       <form class="max-w-md mx-auto my-14 border p-4 " onSubmit={handleSubmit}>
@@ -153,74 +153,81 @@ const page = () => {
               Company
             </label>
           </div>
-          </div>
-          <div>
-            
-
-<fieldset>
-  <legend class="  text-white mb-2 ">Gender</legend>
-
-  <div class="flex items-center mb-4">
-    <input 
-    id="country-option-1" 
-    type="radio" 
-    name={data.gender} 
-    value="male"  
-    onChange={handleData}  
-    checked={data.gender==="male"}  
-    class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-500  dark:bg-gray-700 dark:border-gray-600"/>
-    <label htmlFor="country-option-1" class="block ms-2  text-sm font-medium text-white dark:text-gray-300">
-      Male
-    </label>
-  </div>
-
-  <div class="flex items-center mb-4">
-    <input id="country-option-2" 
-    type="radio" name="female" 
-    value={data.gender}
-    onChange={handleData}  
-    checked={data.gender==="female"} 
-    class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"/>
-    <label htmlFor="country-option-2" class="block ms-2 text-sm font-medium text-white dark:text-gray-300">
-      Female
-    </label>
-  </div>
-</fieldset>
-</div>
-<div>
-  {/* Country Selection */}
-  <div className="mb-5">
-          <label 
-            htmlFor="countries" 
-            className="block mb-2 text-sm font-medium text-white dark:text-white"
-          >
-            Select your country
-          </label>
-          <select
-            id="countries"
-            name="country" 
-            value={data.country}
-            onChange={handleData} 
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          >
-            <option value="">Select a country</option>
-            <option value="United States">United States</option>
-            <option value="Canada">Canada</option>
-            <option value="France">France</option>
-            <option value="Germany">Germany</option>
-          </select>
         </div>
-</div>
-        
+        <div>
+          <fieldset>
+            <legend class="  text-white mb-2 ">Gender</legend>
+
+            <div class="flex items-center mb-4">
+              <input
+                id="country-option-1"
+                type="radio"
+                name={data.gender}
+                value="male"
+                onChange={handleData}
+                checked={data.gender === "male"}
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-500  dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                htmlFor="country-option-1"
+                class="block ms-2  text-sm font-medium text-white dark:text-gray-300"
+              >
+                Male
+              </label>
+            </div>
+
+            <div class="flex items-center mb-4">
+              <input
+                id="country-option-2"
+                type="radio"
+                name="female"
+                value={data.gender}
+                onChange={handleData}
+                checked={data.gender === "female"}
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
+              />
+              <label
+                htmlFor="country-option-2"
+                class="block ms-2 text-sm font-medium text-white dark:text-gray-300"
+              >
+                Female
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div>
+          {/* Country Selection */}
+          <div className="mb-5">
+            <label
+              htmlFor="countries"
+              className="block mb-2 text-sm font-medium text-white dark:text-white"
+            >
+              Select your country
+            </label>
+            <select
+              id="countries"
+              name="country"
+              value={data.country}
+              onChange={handleData}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            >
+              <option value="">Select a country</option>
+              <option value="United States">United States</option>
+              <option value="Canada">Canada</option>
+              <option value="France">France</option>
+              <option value="Germany">Germany</option>
+            </select>
+          </div>
+        </div>
+
         <button
           type="submit"
-          class= "text-white  mt-2  f font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center border-2 hover:border-white hover:bg-white hover:text-black"
+          class="text-white  mt-2  f font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center border-2 hover:border-white hover:bg-white hover:text-black"
         >
           Submit
         </button>
       </form>
     </div>
-  
   );
 };
 
