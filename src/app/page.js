@@ -20,9 +20,8 @@ const page = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-  };
-    console.log(data)
   }
+  console.log(data)
   return (
     <div>
       <form class="max-w-md mx-auto my-14 border p-4 " onSubmit={handleSubmit}>
